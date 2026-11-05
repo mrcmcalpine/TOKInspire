@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A TOK Exhibition thinking tool that generates prompts, objects and inquiry challenges without writing answers for students.">
+  <title>TOK Exhibition Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">TOK EXHIBITION LAB</p>
+      <h1>Ordinary objects. Difficult questions.</h1>
+      <p class="intro">Generate three contrasting inspiration objects, test their connections and replace them with specific objects of your own.</p>
+    </div>
+    <button id="resetButton" class="button button-quiet" type="button">Reset session</button>
+  </header>
+
+  <main>
+    <section class="panel controls" aria-labelledby="setup-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">STEP 1</p>
+          <h2 id="setup-title">Choose a prompt</h2>
+        </div>
+        <button id="randomPromptButton" class="button button-secondary" type="button">Random prompt</button>
+      </div>
+
+      <label for="promptSelect">Exhibition prompt</label>
+      <select id="promptSelect"></select>
+      <div id="promptDisplay" class="prompt-display"></div>
+
+      <div class="generation-row">
+        <button id="generateButton" class="button button-primary" type="button">Generate three objects</button>
+        <p class="microcopy">The generator uses enabled objects only and tries to vary their contexts and categories.</p>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="objects-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">STEP 2</p>
+          <h2 id="objects-title">Explore the objects</h2>
+        </div>
+        <p id="generationStatus" class="status" aria-live="polite"></p>
+      </div>
+
+      <div id="objectGrid" class="object-grid">
+        <div class="empty-state">Choose a prompt and generate a set to begin.</div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="challenge-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">STEP 3</p>
+          <h2 id="challenge-title">Progressive challenge</h2>
+        </div>
+      </div>
+      <div id="challengeLevels" class="challenge-levels"></div>
+    </section>
+
+    <section class="panel planning-panel" aria-labelledby="planning-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">STEP 4</p>
+          <h2 id="planning-title">Make it yours</h2>
+        </div>
+        <button id="printButton" class="button button-secondary" type="button">Print planning board</button>
+      </div>
+      <p>Replace each generic inspiration with a specific object that exists in a clear real-world context. Your notes remain in this browser only.</p>
+      <div id="planningBoard" class="planning-board"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Inspiration objects are not exhibition answers.</strong> This tool generates thinking, not commentary.</p>
+  </footer>
+
+  <script src="data/prompts.js"></script>
+  <script src="data/objects.js"></script>
+  <script src="data/lenses.js"></script>
+  <script src="data/challenges.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
